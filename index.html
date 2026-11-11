@@ -19,6 +19,7 @@ button{border:0;color:#351522;background:linear-gradient(110deg,#f5a1bb,#e8759c)
 button:active{transform:scale(.97)}
 .glow{position:absolute;width:260px;height:260px;border-radius:50%;background:#d94c8b24;filter:blur(70px);pointer-events:none}
 .topline{font-size:12px;letter-spacing:2px;color:#b99aaa;text-transform:uppercase;margin-bottom:28px}
+.letter-screen{justify-content:flex-start;padding-top:28px;padding-bottom:34px}.letter-card{width:min(100%,520px);max-height:62svh;overflow-y:auto;text-align:left;padding:25px 22px 28px;border:1px solid #b77b9566;border-radius:13px;background:linear-gradient(145deg,#fff8f1f2,#f5e6e8f0);color:#4b2639;box-shadow:0 12px 45px #0008;scrollbar-color:#d58aa5 transparent;animation:letterAppear 1.1s ease both}.letter-heading{font-size:27px;font-style:italic;color:#873c60;margin-bottom:18px}.letter-heading span{font-style:normal}.letter-copy p{max-width:none;color:#59394a;font:15px/1.72 Georgia,serif;margin:0 0 14px}.letter-copy strong{color:#9a456b}.letter-copy .letter-birthday{font-weight:bold;color:#9a456b;font-size:18px;margin-top:22px}.letter-copy .letter-sign{font-weight:bold;color:#9a456b;font-size:20px;text-align:right;margin:22px 0 0}@keyframes letterAppear{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
 .chat{width:min(100%,390px);height:min(65svh,610px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;text-align:left;overflow:hidden;padding:10px 0 22px}
 .bubble{max-width:84%;padding:11px 14px;border-radius:17px;font:14px/1.35 Arial,sans-serif;opacity:0;animation:pop .45s ease forwards;box-shadow:0 3px 12px #0004}
 .bubble.me{align-self:flex-end;background:#9c477b;color:#fff;border-bottom-right-radius:5px}
@@ -64,18 +65,33 @@ button:active{transform:scale(.97)}
  <div class="small">сделано с теплом</div>
 </section>
 <section class="screen" id="s1">
- <div class="topline">одно маленькое признание</div>
- <h1 style="font-size:28px">Немного переписки…</h1>
- <div class="chat" id="chat"></div>
- <button id="chatBtn" onclick="nextChat()">продолжить</button>
-</section>
-<section class="screen" id="s2">
- <div class="glow"></div><div class="topline">у тебя новое письмо</div>
- <h1 style="font-size:29px">Кажется, это тебе</h1>
- <p>Нажми на конверт, Ариша.</p>
+ <div class="glow"></div><div class="topline">одно письмо — только для тебя</div>
+ <h1 style="font-size:29px">Для Ариши</h1>
+ <p>Я оставил здесь кое-что важное.<br>Нажми на конверт, чтобы прочитать.</p>
  <div class="envelope" id="env" onclick="openEnvelope()"><div class="env-back"></div><div class="env-flap"></div><div class="env-front"></div><div class="seal">♥</div></div>
- <div class="name-under">Ариша</div>
- <button id="envBtn" onclick="openEnvelope()">открыть письмо</button>
+ <div class="name-under">с любовью, для Ариши</div>
+ <button id="envBtn" onclick="openEnvelope()">открыть письмо ♥</button>
+</section>
+<section class="screen letter-screen" id="s2">
+ <div class="topline">несколько слов от сердца</div>
+ <article class="letter-card" id="letterCard">
+  <div class="letter-heading">Ариша… <span>❤️</span></div>
+  <div class="letter-copy">
+   <p>В начале отношений я мало говорил слово «люблю». Возможно, потому что сам редко слышал его в детстве и даже в подростковом возрасте. Для меня оно много значило, и я не хотел преуменьшать его значение.</p>
+   <p>Потом ты попросила почаще его говорить, и я отчасти переборщил: начал произносить это слово слишком часто и, возможно, не всегда уместно. Может быть, именно эту неискренность ты имела в виду.</p>
+   <p>Знаешь, иногда самые важные чувства очень сложно выразить словами. Кажется, что никаких слов не хватит, чтобы передать всё то, что находится внутри. Но сегодня я хочу хотя бы немного попробовать.</p>
+   <p>Среди миллионов людей, миллиардов звёзд и бесконечного количества галактик есть одна удивительная вещь, которая для меня гораздо важнее всего этого, — ты.</p>
+   <p>Мне нравится мысль о том, что в такой огромной Вселенной наши пути однажды пересеклись. Сначала была наша первая встреча в Артеке, потом многое произошло и в моей жизни, и в твоей. Но судьба снова привела нас друг к другу <strong>08.08.2025</strong> — на той самой лавочке возле Кремля.</p>
+   <p>Я тогда очень сильно мялся и боялся, потому что для меня отношения — это что-то серьёзное, важный шаг. Уже тогда в голове крутилась мысль о том, что я люблю тебя, но я не мог в полной мере описать это словами.</p>
+   <p>И если бы мне пришлось выбирать среди бесконечного количества миров, я бы снова и снова искал тот, в котором есть ты и наши пути пересекаются.</p>
+   <p>Я точно знаю, что за этот год отношений ты стала для меня очень близким и любимым человеком — тем, кому я могу довериться и у кого могу найти спокойствие и поддержку.</p>
+   <p class="letter-birthday">С днём рождения! ❤️</p>
+   <p>Пусть в твоей жизни будет как можно больше счастья, искренних улыбок, исполнения желаний и моментов, которые хочется сохранить навсегда.</p>
+   <p>И пусть ты никогда не забываешь, насколько ты особенная.</p>
+   <p class="letter-sign">Я люблю тебя. ❤️</p>
+  </div>
+ </article>
+ <button onclick="go(3);launchHearts()">дальше, моя хорошая ✨</button>
 </section>
 <section class="screen" id="s3">
  <div class="hearts" id="hearts"></div><div class="glow"></div>
@@ -104,23 +120,10 @@ button:active{transform:scale(.97)}
  <div class="small">это послание создано специально для тебя</div>
 </section>
 <script>
-const messages=[
- ['you','Привет, Ариша ♡'],
- ['me','Привет :)'],
- ['you','Знаешь, я хотел кое-что сказать…'],
- ['me','Что такое?'],
- ['you','Ты умеешь делать обычные моменты особенными.'],
- ['you','И рядом с тобой мир будто становится немного светлее.'],
- ['me','Это так мило 🥺'],
- ['you','Просто не забывай, какая ты замечательная.'],
- ['me','Спасибо ❤️']
-];
-let chatIndex=0;
-function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');if(n===4)drawGalaxy();if(n===5){const p=document.getElementById('portrait');p.style.animation='none';void p.offsetWidth;p.style.animation='reveal 2s ease both';}}
-function nextChat(){if(chatIndex<messages.length){const [who,txt]=messages[chatIndex++];const b=document.createElement('div');b.className='bubble '+(who==='me'?'me':'you');b.textContent=txt;document.getElementById('chat').appendChild(b);document.getElementById('chat').scrollTop=9999;document.getElementById('chatBtn').textContent=chatIndex===messages.length?'дальше ♡':'ещё…';}else go(2);}
-function openEnvelope(){document.getElementById('env').classList.add('open');document.getElementById('envBtn').textContent='письмо открыто ♥';setTimeout(()=>{go(3);launchHearts()},900);}
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');if(n===2){const card=document.getElementById('letterCard');card.scrollTop=0;card.style.animation='none';void card.offsetWidth;card.style.animation='letterAppear 1.1s ease both';}if(n===4)drawGalaxy();if(n===5){const p=document.getElementById('portrait');p.style.animation='none';void p.offsetWidth;p.style.animation='reveal 2s ease both';}}
+function openEnvelope(){const env=document.getElementById('env');if(env.classList.contains('open'))return;env.classList.add('open');document.getElementById('envBtn').textContent='письмо открыто ♥';setTimeout(()=>go(2),900);}
 function launchHearts(){const root=document.getElementById('hearts');for(let i=0;i<32;i++){let h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','✦'][i%3];h.style.left=Math.random()*100+'%';h.style.animationDelay=Math.random()*2+'s';h.style.fontSize=(13+Math.random()*20)+'px';root.appendChild(h);setTimeout(()=>h.remove(),7000);}}
-function again(){chatIndex=0;document.getElementById('chat').innerHTML='';document.getElementById('env').classList.remove('open');document.getElementById('envBtn').textContent='открыть письмо';go(0);}
+function again(){document.getElementById('env').classList.remove('open');document.getElementById('envBtn').textContent='открыть письмо ♥';go(0);}
 const loveWords = [
  ["Я люблю тебя","русский"],["I love you","английский"],["Je t’aime","французский"],["Ti amo","итальянский"],["Te amo","испанский"],["Ich liebe dich","немецкий"],["Eu te amo","португальский"],["Ik hou van jou","нидерландский"],["Jag älskar dig","шведский"],["Jeg elsker deg","норвежский"],["Jeg elsker dig","датский"],["Rakastan sinua","финский"],["Seni seviyorum","турецкий"],["Szeretlek","венгерский"],["Miluji tě","чешский"],["Ľúbim ťa","словацкий"],["Kocham cię","польский"],["Обичам те","болгарский"],["Те сакам","македонский"],["Волим те","сербский"],["Volim te","хорватский"],["Ljubim te","словенский"],["Te iubesc","румынский"],["Σε αγαπώ","греческий"],["אני אוהב אותך","иврит"],["أحبك","арабский"],["دوستت دارم","персидский"],["Seni sevaman","узбекский"],["Мен сені сүйемін","казахский"],["Мен сени сүйөм","киргизский"],["Ես սիրում եմ քեզ","армянский"],["მიყვარხარ","грузинский"],["მიყვარხარ","грузинский"],["მიყვარხარ","грузинский"],["আমি তোমাকে ভালোবাসি","бенгальский"],["मुझे तुमसे प्यार है","хинди"],["நான் உன்னை காதலிக்கிறேன்","тамильский"],["నేను నిన్ను ప్రేమిస్తున్నాను","телугу"],["ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ","каннада"],["ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു","малаялам"],["මම ඔයාට ආදරෙයි","сингальский"],["ฉันรักคุณ","тайский"],["ฉันรักเธอ","тайский"],["Tôi yêu bạn","вьетнамский"],["Aku cinta kamu","индонезийский"],["Saya sayang awak","малайский"],["Mahal kita","филиппинский"],["我爱你","китайский"],["愛してる","японский"],["사랑해","корейский"],["我愛你","китайский (традиционный)"],["Te aroha ahau ki a koe","маори"],["Aloha au iā ʻoe","гавайский"],["Nakupenda","суахили"],["Ngiyakuthanda","зулу"],["እወድሃለሁ","амхарский"],["Mo nifẹ rẹ","йоруба"],["A hụrụ m gị n'anya","игбо"],["Ke a go rata","сесото"],["Ndagukunda","киньяруанда"],["Mi amas vin","эсперанто"],["T'estimo","каталанский"],["Ek het jou lief","африкаанс"],["Tha gaol agam ort","шотландский гэльский"],["Rwy'n dy garu di","валлийский"],["Me az kar","бретонский"],["Te sakam","албанский"],["Volim te","боснийский"],["Aš tave myliu","литовский"],["Es tevi mīlu","латышский"],["Ma armastan sind","эстонский"],["Kocham cię","польский"],["Mən səni sevirəm","азербайджанский"],["Ես քեզ սիրում եմ","армянский"],["მიყვარხარ","грузинский"]
 ];
